@@ -1,0 +1,1 @@
+REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /V SettingsPageVisibility /T REG_SZ /D showonly:windowsupdate;network-ethernet;network-wifi;powersleep
