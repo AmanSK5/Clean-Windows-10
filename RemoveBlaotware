@@ -1,0 +1,39 @@
+Get-AppxPackage *Microsoft.SkypeApp* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windowscommunicationsapps* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.People* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.XboxApp* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.Messaging* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.office.onenote* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windowsstore* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.xboxgameoverlay* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windows.photos* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.bingweather* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.zunemusic* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windowsalarms* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.zunevideo* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windowsfeedbackhub* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.microsoftstickynotes* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.MicrosoftEdge* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windows.cortana* | Remove-AppxPackage
+Get-AppxPackage *Microsoft.windowscamera* | Remove-AppxPackage
+Get-AppxPackage *maps* | Remove-AppxPackage
+Get-AppxPackage *oneconnect* | Remove-AppxPackage
+Get-AppxPackage *mspaint* | Remove-AppxPackage
+Get-AppxPackage *solitaire* | Remove-AppxPackage
+Get-AppxPackage *soundrecorder* | Remove-AppxPackage
+get-appxpackage *3dbuilder* | remove-appxpackage
+get-appxpackage *alarms* | remove-appxpackage
+get-appxpackage *communicationsapps* | remove-appxpackage
+get-appxpackage *camera* | remove-appxpackage
+get-appxpackage *feedback* | remove-appxpackage
+get-appxpackage *zune* | remove-appxpackage
+get-appxpackage *windowsstore* | remove-appxpackage
+get-appxpackage *3d* | remove-appxpackage
+get-appxpackage *sway* | remove-appxpackage
+get-appxpackage *sticky* | remove-appxpackage
+get-appxpackage *photos* | remove-appxpackage
+
+
+#This script removes all the bloatware that comes pre-installed on Windows 10. Run this in powershell as an Admin.
+#If you get an error saying you can't run this, type in the following:
+#Set-executionpolicy unrestricted
