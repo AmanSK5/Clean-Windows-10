@@ -1,0 +1,29 @@
+#If you are having issues with using Group Policy and XML files to create a custom start menu, you can use this method to achieve
+#the same result.
+#Because it will only affect the account you run this on, I would suggest putting this into a logon script for all users,
+#so that when anyone logs in this will auto pin these apps.
+#This script can also unpin apps like photoshop and other bloatware. Simply change the Pin to unpin
+
+
+function Pin-App { param(
+[string]$appname,
+[switch]$unpin
+)
+try{
+
+If ($unpin.IsPresent){
+   ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ?{$_.Name -eq $appname}).Verbs() | ?{$_.Name.replace('&','') -match 'From "Start" UnPin|Unpin from Start'} | %{$_.DoIt()}
+      return "App '$appname' unpinned from Start"
+}else{
+   ((New-Object -Com Shell.Application).NameSpace('shell:::{4234d49b-0245-4df3-b780-3893943456e1}').Items() | ?{$_.Name -eq $appname}).Verbs() | ?{$_.Name.replace('&','') -match 'To "Start" Pin|Pin to Start'} | %{$_.DoIt()}
+      return "App '$appname' pinned to Start"
+      }
+}catch{
+Write-Error "Error Pinning/Unpinning App! (App-Name correct?)"
+      }
+}
+Pin-App "Outlook 2013" -pin
+Pin-App "Word 2013" -pin
+Pin-App "Excel 2013" -pin
+Pin-App "Powerpoint 2013" -pin
+Pin-App "Adobe Photoshop Express" -unpin
